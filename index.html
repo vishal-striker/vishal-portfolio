@@ -2,46 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Vishal Mohite | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vishal Mohite Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header>
-    <h1>Vishal Mohite</h1>
-    <p>Aspiring Developer | Java & Web Enthusiast</p>
-</header>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>I’m a passionate developer with a diploma and B.Tech in Computer Engineering. I enjoy building things with code.</p>
-</section>
-
-<section id="skills">
-    <h2>Skills</h2>
+<!-- Navigation -->
+<nav>
     <ul>
-        <li>Java</li>
-        <li>HTML & CSS</li>
-        <li>Git & GitHub</li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
     </ul>
+</nav>
+
+<!-- About Section -->
+<section id="about">
+    <h1>Vishal Mohite</h1>
+    <p>Welcome to my portfolio! I'm a passionate web developer.</p>
 </section>
 
+<!-- Projects Section -->
 <section id="projects">
     <h2>Projects</h2>
-    <ul>
-        <li>
-            <strong>Portfolio Website</strong> – A personal portfolio built using HTML and CSS.
-            <br />
-            <a href="#">View Project</a> <!-- You can later add a GitHub or live link here -->
-        </li>
-    </ul>
+
+    <div class="project-card">
+        <img src="images/portfolio-screenshot.png" alt="Portfolio Website Screenshot" />
+        <h3>Portfolio Website</h3>
+        <p>A personal portfolio built using HTML and CSS.</p>
+        <a href="https://github.com/vishal-striker/vishal-portfolio" target="_blank">View Project</a>
+    </div>
+
+    <!-- Add more project cards below if you want -->
 </section>
 
-
+<!-- Contact Section -->
 <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: your.email@example.com</p>
-    <p>GitHub: github.com/yourusername</p>
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/forms" method="POST">
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" required /><br />
+
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required /><br />
+
+        <label for="message">Message:</label><br />
+        <textarea id="message" name="message" rows="5" required></textarea><br />
+
+        <button type="submit">Send</button>
+    </form>
 </section>
+
+<!-- Smooth Scroll Script -->
+<script>
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
+
 </body>
 </html>
